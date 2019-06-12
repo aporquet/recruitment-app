@@ -5,6 +5,7 @@ import {ApiService} from './api.service';
     selector: 'app-root',
     templateUrl: './app.component.html'
 })
+
 export class AppComponent implements OnInit {
     title = 'recruitment-app';
 
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
     }
 
     call() {
-        this.apiService.getInterviews().subscribe(response => {
+        this.apiService.getRecruiters().subscribe(response => {
                 console.log(response);
             }
         );

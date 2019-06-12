@@ -1,0 +1,37 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Recruiters</h5>
+                    <div class="card-text">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">FirstName</th>
+                                <th scope="col">LastName</th>
+                                <th scope="col">Mail</th>
+                                <th scope="col">Experience</th>
+                                <th scope="col">Skills</th>
+                                <th scope="col">KeySkills</th>
+                                <th scope="col">Enterprise</th>
+                            </tr>
+                            </thead>
+                            <tbody *ngFor="let recruiter of recruiters">
+                            <tr>
+                                <td>{{recruiter.firstName}}</td>
+                                <td>{{recruiter.lastName}}</td>
+                                <td>{{recruiter.mail}}</td>
+                                <td>{{recruiter.experience}}</td>
+                                <td>{{recruiter.skills}}</td>
+                                <td>{{recruiter.keySkills}}</td>
+                                <td>{{recruiter.enterprise}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
