@@ -8,7 +8,8 @@ import {HeaderComponent} from './components/header/header.component';
 import { RecruitersComponent } from './components/recruiters/recruiters.component';
 import { InterviewsComponent } from './components/interviews/interviews.component';
 import { CandidatesComponent } from './components/candidates/candidates.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CandidateRowComponent } from './components/candidate-row/candidate-row.component';
 
 @NgModule({
     declarations: [
@@ -16,13 +17,15 @@ import {ReactiveFormsModule} from '@angular/forms';
         HeaderComponent,
         RecruitersComponent,
         InterviewsComponent,
-        CandidatesComponent
+        CandidatesComponent,
+        CandidateRowComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

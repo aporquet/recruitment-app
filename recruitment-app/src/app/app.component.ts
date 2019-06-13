@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
 
     call() {
         this.apiService.getRecruiters().subscribe(response => {
-                console.log(response);
             }
         );
     }
