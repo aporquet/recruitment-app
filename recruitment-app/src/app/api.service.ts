@@ -21,4 +21,9 @@ export class ApiService {
         return this.httpClient.get(this.url + 'interviews', { headers });
     }
 
+    getCandidates() {
+        const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('test-user:s3cur3d') });
+        return this.httpClient.get(this.url + 'candidates', { headers });
+    }
+
 }

@@ -7,18 +7,22 @@ import {HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './components/header/header.component';
 import { RecruitersComponent } from './components/recruiters/recruiters.component';
 import { InterviewsComponent } from './components/interviews/interviews.component';
+import { CandidatesComponent } from './components/candidates/candidates.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         RecruitersComponent,
-        InterviewsComponent
+        InterviewsComponent,
+        CandidatesComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
