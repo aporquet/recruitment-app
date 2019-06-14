@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {environment} from '../environments/environment';
-import Candidate from './models/Candidate';
+import {environment} from '../../environments/environment';
+import Candidate from '../models/Candidate';
 
 @Injectable({
     providedIn: 'root'
@@ -25,7 +25,7 @@ export class ApiService {
     }
 
     updateCandidate(candidate: Candidate) {
-        return this.httpClient.put(this.url + 'candidates/update', {candidate: Candidate});
+        return this.httpClient.put<Candidate>(this.url + 'candidates/update', candidate.toJson());
     }
 
     getSkills() {
