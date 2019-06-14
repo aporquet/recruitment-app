@@ -25,7 +25,6 @@ export class ApiService {
     }
 
     updateCandidate(candidate: Candidate) {
-        const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('test-user:s3cur3d')});
         return this.httpClient.put(this.url + 'candidates/update', {candidate: Candidate});
     }
 
