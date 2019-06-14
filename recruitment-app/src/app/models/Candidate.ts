@@ -32,7 +32,7 @@ export default class Candidate {
     private _keySkills: Skill[];
     private _enterprise: string;
 
-    constructor(uuid: string, firstName: string, lastName: string, mail: string, experience: number, skills: Skill[], keySkills: Skill[], enterprise: string) {
+    constructor(uuid: string, firstName: string, lastName: string, mail: string, experience: number = 1, skills: Skill[] = [], keySkills: Skill[] = [], enterprise: string) {
         this._uuid = uuid;
         this._firstName = firstName;
         this._lastName = lastName;

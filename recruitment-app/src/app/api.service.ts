@@ -13,25 +13,20 @@ export class ApiService {
     }
 
     getRecruiters() {
-        const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('test-user:s3cur3d')});
-        return this.httpClient.get(this.url + 'recruiters', {headers});
+        return this.httpClient.get(this.url + 'recruiters');
     }
 
     getInterviews() {
-        const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('test-user:s3cur3d')});
-        return this.httpClient.get(this.url + 'interviews', {headers});
+        return this.httpClient.get(this.url + 'interviews');
     }
 
     getCandidates() {
-        const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('test-user:s3cur3d')});
-        return this.httpClient.get<Candidate[]>(this.url + 'candidates', {headers});
+        return this.httpClient.get<Candidate[]>(this.url + 'candidates');
     }
 
-    updateCandidate(candidate: any) {
+    updateCandidate(candidate: Candidate) {
         const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('test-user:s3cur3d')});
-        headers.set('Content-Type', 'application/json; charset=utf-8');
-        console.log(candidate);
-        return this.httpClient.put(this.url + 'candidates/update', {candidate: candidate}, {headers});
+        return this.httpClient.put(this.url + 'candidates/update', {candidate: Candidate});
     }
 
     getSkills() {
