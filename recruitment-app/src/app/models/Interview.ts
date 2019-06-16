@@ -43,7 +43,7 @@ export default class Interview {
         return this._idInterview;
     }
 
-    formatToDelete() {
+    FormatToDelete(interview: Interview) {
         return {
             idInterview: this.idInterview,
             uuidRecruiter: this.recruiterFullDto.uuid,

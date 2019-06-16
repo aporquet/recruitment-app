@@ -2,12 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import Candidate from '../models/Candidate';
+import Interview from '../models/Interview';
+import InterviewDelete from '../models/InterviewDelete';
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class ApiService {
+
     private url = environment.url;
 
     constructor(private httpClient: HttpClient) {
@@ -18,12 +21,13 @@ export class ApiService {
     }
 
     getInterviews() {
-        return this.httpClient.get(this.url + 'interviews');
+        return this.httpClient.get<Interview[]>(this.url + 'interviews');
     }
 
-/*    deleteInterview(interview: Interview){
-        return this.httpClient.delete<Interview>(this.url + 'interviews/delete', interview.formatToDelete());
-    }*/
+    deleteInterview(interview: Interview){
+        let interviewDelete:InterviewDelete = new InterviewDelete(interview.idInterview, interview.recruiterFullDto.uuid, interview.localDateTime);
+        return this.httpClient.delete<Interview>(this.url + 'interviews/delete', interviewDelete);
+    }
 
     getCandidates() {
         return this.httpClient.get<Candidate[]>(this.url + 'candidates');

@@ -46,4 +46,5 @@ export default class Recruiter {
     get uuid(): string {
         return this._uuid;
     }
+
 }
