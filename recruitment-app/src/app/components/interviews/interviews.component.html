@@ -1,4 +1,10 @@
-<div class="container mt-3">
+<div class="container-fluid mt-3">
+    <div *ngIf="interviewService.success" class="alert alert-success" role="alert">
+        {{interviewService.success}}
+    </div>
+    <div *ngIf="interviewService.error" class="alert alert-danger" role="alert">
+        {{interviewService.error}}
+    </div>
     <div class="row">
         <div class="col">
             <div class="card shadow">
@@ -10,17 +16,14 @@
                             <tr>
                                 <th scope="col">Date</th>
                                 <th scope="col">Recruiter</th>
+                                <th scope="col">Mail Recruiter</th>
                                 <th scope="col">Candidate</th>
-                                <th scope="col">Mail</th>
+                                <th scope="col">Mail Candidate</th>
                             </tr>
                             </thead>
-                            <tbody *ngFor="let interview of interviews">
-                            <tr>
-                                <td>{{interview.localDateTime | date: 'dd/MM/yyyy'}}</td>
-                                <td>{{interview.recruiterFullDto.firstName}} {{interview.recruiterFullDto.lastName}} </td>
-                                <td>{{interview.candidateFullDto.firstName}} {{interview.candidateFullDto.lastName}}</td>
-                                <td>{{interview.candidateFullDto.mail}}</td>
-                            </tr>
+                            <tbody>
+                            <app-interview-row style="display: contents;" *ngFor="let interview of interviewService.interviews"
+                                               [interview]="interview"></app-interview-row>
                             </tbody>
                         </table>
                     </div>

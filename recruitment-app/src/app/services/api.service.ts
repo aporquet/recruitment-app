@@ -6,6 +6,7 @@ import Candidate from '../models/Candidate';
 @Injectable({
     providedIn: 'root'
 })
+
 export class ApiService {
     private url = environment.url;
 
@@ -20,12 +21,20 @@ export class ApiService {
         return this.httpClient.get(this.url + 'interviews');
     }
 
+/*    deleteInterview(interview: Interview){
+        return this.httpClient.delete<Interview>(this.url + 'interviews/delete', interview.formatToDelete());
+    }*/
+
     getCandidates() {
         return this.httpClient.get<Candidate[]>(this.url + 'candidates');
     }
 
     updateCandidate(candidate: Candidate) {
-        return this.httpClient.put<Candidate>(this.url + 'candidates/update', candidate.toJson());
+        return this.httpClient.put<Candidate>(this.url + 'candidates/update', candidate.CandidateFormatProperties());
+    }
+
+    deleteCandidate(uuidCandidate: string){
+        return this.httpClient.delete<string>(this.url + 'candidates/delete/'+uuidCandidate);
     }
 
     getSkills() {

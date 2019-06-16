@@ -83,7 +83,7 @@ export default class Candidate {
         this._experience = value;
     }
 
-    toJson() {
+    CandidateFormatProperties() {
         return {
             uuid: this.uuid,
             firstName: this.firstName,
@@ -92,6 +92,13 @@ export default class Candidate {
             experience: this.experience
         };
     }
+
+    CandidateFormatUUIDPropertie(uuid:string){
+        return {
+            uuid: this.uuid
+        };
+    }
+
 }
 
 
