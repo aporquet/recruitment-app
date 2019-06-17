@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import Candidate from '../models/Candidate';
 import Interview from '../models/Interview';
-import InterviewDelete from '../models/InterviewDelete';
+import Skill from '../models/Skill';
 
 @Injectable({
     providedIn: 'root'
@@ -24,8 +24,8 @@ export class ApiService {
         return this.httpClient.get<Interview[]>(this.url + 'interviews');
     }
 
-    deleteInterview(interview: Interview){
-        return this.httpClient.delete(this.url + 'interviews/delete/'+interview.idInterview);
+    deleteInterview(idInterview: string){
+        return this.httpClient.delete<string>(this.url + 'interviews/delete/'+idInterview);
     }
 
     getCandidates() {
@@ -41,8 +41,7 @@ export class ApiService {
     }
 
     getSkills() {
-        const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('test-user:s3cur3d')});
-        return this.httpClient.get(this.url + 'skills', {headers});
+        return this.httpClient.get<Skill[]>(this.url + 'skills');
     }
 
 }

@@ -14,6 +14,4 @@ export default class Skill {
     get idSkill(): number {
         return this._idSkill;
     }
-
-
 }

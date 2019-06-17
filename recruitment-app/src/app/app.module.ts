@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CandidateRowComponent } from './components/candidate-row/candidate-row.component';
 import {HttpHeaderInterceptor} from './infra/http-interceptor';
 import { InterviewRowComponent } from './components/interview-row/interview-row.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { InterviewRowComponent } from './components/interview-row/interview-row.
         CandidatesComponent,
         CandidateRowComponent,
         InterviewRowComponent,
+        SkillsComponent,
     ],
     imports: [
         BrowserModule,
