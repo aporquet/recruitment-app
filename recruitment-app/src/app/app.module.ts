@@ -13,6 +13,7 @@ import { CandidateRowComponent } from './components/candidate-row/candidate-row.
 import {HttpHeaderInterceptor} from './infra/http-interceptor';
 import { InterviewRowComponent } from './components/interview-row/interview-row.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ModalCandidateComponent } from './components/modal-candidate/modal-candidate.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { SkillsComponent } from './components/skills/skills.component';
         CandidateRowComponent,
         InterviewRowComponent,
         SkillsComponent,
+        ModalCandidateComponent,
     ],
     imports: [
         BrowserModule,
@@ -38,6 +40,9 @@ import { SkillsComponent } from './components/skills/skills.component';
             useClass: HttpHeaderInterceptor,
             multi   : true
         }
+    ],
+    entryComponents: [
+        ModalCandidateComponent
     ],
     bootstrap: [AppComponent]
 })
