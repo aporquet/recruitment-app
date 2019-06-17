@@ -25,8 +25,7 @@ export class ApiService {
     }
 
     deleteInterview(interview: Interview){
-        let interviewDelete:InterviewDelete = new InterviewDelete(interview.idInterview, interview.recruiterFullDto.uuid, interview.localDateTime);
-        return this.httpClient.delete<Interview>(this.url + 'interviews/delete', interviewDelete);
+        return this.httpClient.delete(this.url + 'interviews/delete/'+interview.idInterview);
     }
 
     getCandidates() {
