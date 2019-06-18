@@ -1,0 +1,40 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h6 class="modal-title" id="modal-basic-title">Candidate</h6>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="firstName" aria-label="firstName"
+                   aria-describedby="basic-addon2" [(ngModel)]="newFirstName">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="lastName" aria-label="lastName"
+                   aria-describedby="basic-addon2" [(ngModel)]="newLastName">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="mail" aria-label="mail"
+                   aria-describedby="basic-addon2" [(ngModel)]="newMail">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="experience" aria-label="experience"
+                   aria-describedby="basic-addon2" [(ngModel)]="newExperience">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="key skills" aria-label="key skills"
+                   aria-describedby="basic-addon2" [(ngModel)]="newKeySkills">
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="skills" aria-label="skills"
+                   aria-describedby="basic-addon2" [(ngModel)]="newSkills">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="c('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<button class="btn btn-primary" style="margin-left: 15px; margin-top: 20px;" (click)="open(content)">Add candidate
+</button>
